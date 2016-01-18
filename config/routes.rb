@@ -1,5 +1,8 @@
 Rails.application.routes.draw do
 
+  get 'boats/new'
+  post 'boats/new' => 'user#show'
+
   root 'static_pages#home'
 
   get '/login' => 'sessions#new'
@@ -7,6 +10,7 @@ Rails.application.routes.draw do
   get '/about' => 'static_pages#about'
 
 resources :users
+resources :boats
 
   # Example resource route with options:
   #   resources :products do
