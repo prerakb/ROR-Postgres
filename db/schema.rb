@@ -17,9 +17,12 @@ ActiveRecord::Schema.define(version: 20160118213723) do
     t.string   "name"
     t.string   "containers"
     t.string   "location"
+    t.integer  "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
+
+  add_index "boats", ["user_id"], name: "index_boats_on_user_id"
 
   create_table "users", force: :cascade do |t|
     t.string   "name"

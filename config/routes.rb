@@ -1,13 +1,13 @@
 Rails.application.routes.draw do
 
-  get 'boats/new'
   post 'boats/new' => 'user#show'
-
+  get 'boats/edit' => 'boats#edit'
   root 'static_pages#home'
-
+  get '/about' => 'static_pages#about'
+  
   get '/login' => 'sessions#new'
   post '/login' => 'sessions#create'
-  get '/about' => 'static_pages#about'
+  delete '/logout' => 'sessions#destroy'
 
 resources :users
 resources :boats
