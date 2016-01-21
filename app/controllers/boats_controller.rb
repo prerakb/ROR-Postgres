@@ -1,6 +1,6 @@
 class BoatsController < ApplicationController
   def show
-  	@boat  = Boat.find(params[:id])
+  	@boat = Boat.find(params[:id])
   end
 
   def new
@@ -11,9 +11,9 @@ class BoatsController < ApplicationController
   	if current_user
         @boat = Boat.new(boat_params)
         if @boat.save
-        redirect_to user_path(current_user)
+         redirect_to user_path(current_user)
         else
-        render "new"
+         render "new"
         end
     else
       redirect_to login_path    
@@ -21,11 +21,11 @@ class BoatsController < ApplicationController
   end
 
   def edit
-    @boat  = Boat.find(params[:id])
+    @boat = Boat.find(params[:id])
   end
 
   def update
-    @boat  = Boat.find(params[:id])
+    @boat = Boat.find(params[:id])
     if @boat.update_attributes(boat_params)
       redirect_to user_path(current_user)
     else render edit_boat(@boat)

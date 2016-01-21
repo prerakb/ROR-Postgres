@@ -7,12 +7,12 @@
 <h2>Boats Created</h2>
 <% @user.boats.each do |boat| %>
 	<div>
-	<h3>Boat Name: <%= boat.name %></h3>
+	<h3>Boat Name: <%= boat.name %> <%= link_to "Assign jobs", job_path %></h3>
 	<h3>Containers: <%= boat.containers %></h3>
 	<h3>Boat Location: <%= boat.location %></h3>
-	<h3><%= link_to "Edit Boats", edit_boat_path(boat) %></h3>
-	<h3><%= link_to "Delete Boats", boat_path(boat), method: :delete, data: { confirm: "Are you sure?" }%></h3>
+	<h3><%= link_to "Edit Boat", edit_boat_path(boat) %>
+	<%= link_to "Delete Boat", boat_path(boat), method: :delete, data: { confirm: "Are you sure?" }%>
+	</h3>
 	<br><br>
 	</div>
 <% end %>
-

@@ -10,8 +10,9 @@ Rails.application.routes.draw do
   delete '/logout' => 'sessions#destroy'
 
 resources :users
-resources :boats
-
+resources :boats do
+  resources :jobs
+end
   # Example resource route with options:
   #   resources :products do
   #     member do

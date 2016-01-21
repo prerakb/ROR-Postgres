@@ -1,0 +1,16 @@
+<h1>Edit the Jobs created for a Boat</h1>
+
+<%= form_for @job do |f| %>
+  <%= f.label :origin %>
+  <%= f.text_field :origin %>
+  <%= f.label :destination %>
+  <%= f.text_field :destination %>
+  <%= f.label :contneeded %>
+  <%= f.text_field :contneeded %>
+  <%= f.label :cargo %>
+  <%= f.text_field :cargo %>
+  <%= f.label :jobcost %>
+  <%= f.text_field :jobcost %>
+  <br><br>
+  <%= f.submit 'Edit'%>
+<% end %>
