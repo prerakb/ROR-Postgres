@@ -1,1 +1,14 @@
-<h1><%= boat.name %>'s Jobs Page</h1>
+<h1><%= @boat.name %>'s Jobs Page</h1>
+<div>
+<% @boat.jobs.each do |job| %>
+Origin of the job: <%= job.origin %><br>
+Destination of the job: <%= job.destination %><br>
+Containers needed for the job: <%= job.contneeded %><br>
+Cargo for the job: <%= job.cargo %><br>
+The cost of the job: <%= job.jobcost %>
+<br>
+</div>
+<h3><%= link_to "Change Job", edit_boat_job_path(@boat.id, job.id) %>
+<%= link_to "Delete Job", boat_job_path(@boat.id, job.id), method: :delete, data: { confirm: "Are you sure?" }%></h3>
+<br><br>
+<% end %>

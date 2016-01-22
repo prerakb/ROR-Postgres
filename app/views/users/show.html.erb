@@ -1,13 +1,12 @@
 <h1>Welcome <%= @user.name %>!</h1>
 <div><h2>
 <%= link_to "Create Boats", new_boat_path %>
-<%= link_to "Log Out", logout_path, method: :delete, data: { confirm: "Are you sure?" }%>
 </h2>
 </div>
 <h2>Boats Created</h2>
 <% @user.boats.each do |boat| %>
 	<div>
-	<h3>Boat Name: <%= boat.name %> <%= link_to "Assign jobs", job_path %></h3>
+	<h3>Boat Name: <%= boat.name %> <%= link_to "Assign jobs", new_boat_job_path(boat.id) %></h3>
 	<h3>Containers: <%= boat.containers %></h3>
 	<h3>Boat Location: <%= boat.location %></h3>
 	<h3><%= link_to "Edit Boat", edit_boat_path(boat) %>

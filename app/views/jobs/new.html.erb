@@ -1,16 +1,16 @@
 <h1>Create Jobs for a Boat</h1>
 
-<%= form_for [@boat, @job] do |f| %>
+<%= form_for([@boat, @job])  do |f| %>
   <%= f.label :origin %>
-  <%= f.text_field :origin %>
+  <%= f.text_field :origin %><br><br>
   <%= f.label :destination %>
-  <%= f.text_field :destination %>
-  <%= f.label :contneeded %>
-  <%= f.text_field :contneeded %>
+  <%= f.text_field :destination %><br><br>
+  <%= f.label :"containers needed" %>
+  <%= f.text_field :contneeded %><br><br>
   <%= f.label :cargo %>
-  <%= f.text_field :cargo %>
-  <%= f.label :jobcost %>
-  <%= f.text_field :jobcost %>
+  <%= f.text_field :cargo %><br><br>
+  <%= f.label :"job cost" %>
+  <%= f.text_field :jobcost %><br><br>
   <br><br>
   <%= f.submit 'Create'%>
 <% end %>
