@@ -10,17 +10,17 @@ class JobsController < ApplicationController
   end
 
   def create
-    if current_user
+    # if current_user
       @boat = Boat.find(params[:boat_id])
-      	@job = Job.new(job_params)
+      	@job = @boat.jobs.build(job_params)
         if @job.save
-          redirect_to boat_path(params[:boat_id])
+          redirect_to boat_path(@boat)
         else
           render "new"
         end
-    else
-      redirect_to login_path
-    end
+    #else
+      # redirect_to login_path
+    #end
   end
 
   def edit
@@ -29,10 +29,12 @@ class JobsController < ApplicationController
   end
 
   def update
+    @boat = Boat.find(params[:boat_id])
   	@job = Job.find(params[:id])
     if @job.update_attributes(job_params)
-      redirect_to boat_path([@boat, @job])
-    else render edit_job(@job)
+      @job.save
+      redirect_to boat_path(@boat)
+    else render "edit"
     end
   end
 

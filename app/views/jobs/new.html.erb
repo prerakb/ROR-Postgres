@@ -1,4 +1,4 @@
-<h1>Create Jobs for a Boat</h1>
+<h1>Create Jobs for the <%= @boat.name %></h1>
 
 <%= form_for([@boat, @job])  do |f| %>
   <%= f.label :origin %>
@@ -11,6 +11,8 @@
   <%= f.text_field :cargo %><br><br>
   <%= f.label :"job cost" %>
   <%= f.text_field :jobcost %><br><br>
-  <br><br>
+
   <%= f.submit 'Create'%>
 <% end %>
+
+<h3><%= link_to "Your Home Page ", user_path(current_user) %><br><%=link_to " Go Back", :back %></h3>

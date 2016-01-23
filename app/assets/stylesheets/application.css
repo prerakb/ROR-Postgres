@@ -17,13 +17,15 @@ li{
 }
 
 ul{
-	list-style-type: none;
+	/*list-style-type: none;*/
 	font-size: x-large;
 	margin: 0px;
 	padding: 0px;
 	word-spacing: 70px;
 	display: inline;
+	text-decoration: none;
 }
+
 
 /*
  * This is a manifest file that'll be compiled into application.css, which will include all the files

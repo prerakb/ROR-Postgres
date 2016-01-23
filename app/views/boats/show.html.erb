@@ -1,5 +1,8 @@
 <h1><%= @boat.name %>'s Jobs Page</h1>
 <div>
+<h2>Back to your <%= link_to "Home Page", user_path(current_user) %><h2></div>
+<br>
+<div>
 <% @boat.jobs.each do |job| %>
 Origin of the job: <%= job.origin %><br>
 Destination of the job: <%= job.destination %><br>

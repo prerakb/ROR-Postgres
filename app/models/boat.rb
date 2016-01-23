@@ -3,4 +3,5 @@ class Boat < ActiveRecord::Base
 	has_many :jobs
 	validates :name, presence: true
 	validates :name, uniqueness: true
+	validates :location, inclusion: {in: ["Boston", "NY", "NJ", "CT"]}
 end

@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-
+  
   post 'boats/new' => 'user#show'
   get 'boats/edit' => 'boats#edit'
   root 'static_pages#home'
