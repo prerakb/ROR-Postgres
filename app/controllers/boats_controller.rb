@@ -28,7 +28,8 @@ class BoatsController < ApplicationController
     @boat = Boat.find(params[:id])
     if @boat.update_attributes(boat_params)
       redirect_to user_path(current_user)
-    else render edit_boat(@boat)
+    else 
+      render "edit"
     end
   end
 

@@ -34,7 +34,8 @@ class JobsController < ApplicationController
     if @job.update_attributes(job_params)
       @job.save
       redirect_to boat_path(@boat)
-    else render "edit"
+    else 
+      render "edit"
     end
   end
 
