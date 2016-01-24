@@ -12,6 +12,11 @@ body{
 	width: 1000px;
 }
 
+#backg{
+	background-image: url('/assets/containership.jpg');
+	background-size: 100%;
+}
+
 li{
 	display: inline;
 }
