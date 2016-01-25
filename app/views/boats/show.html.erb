@@ -2,6 +2,7 @@
 <div>
 <h2>Back to your <%= link_to "Home Page", user_path(current_user) %><h2></div>
 <br>
+<%= image_tag @boat.avatar.url(:medium) %>
 <div>
 <% @boat.jobs.each do |job| %>
 Origin of the job: <%= job.origin %><br>

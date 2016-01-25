@@ -1,6 +1,7 @@
 class UsersController < ApplicationController
 	  def show
 	  @user = User.find(params[:id])
+	  
 	  end
 
 	  def new
@@ -15,7 +16,6 @@ class UsersController < ApplicationController
 		  else
 		  redirect_to :back
 		  end
-
 	  end
 
 	  private

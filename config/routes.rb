@@ -1,5 +1,9 @@
 Rails.application.routes.draw do
   
+  # get 'followboats/new'
+
+  # get 'followboats/show'
+
   post 'boats/new' => 'user#show'
   get 'boats/edit' => 'boats#edit'
   root 'static_pages#home'
@@ -10,6 +14,7 @@ Rails.application.routes.draw do
   delete '/logout' => 'sessions#destroy'
 
 resources :users
+resources :followboats
 resources :boats do
   resources :jobs
 end

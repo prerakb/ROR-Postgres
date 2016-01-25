@@ -1,6 +1,6 @@
 <h1>Create a New Boat</h1>
 
-<%= form_for @boat do |f| %>
+<%= form_for @boat, :url => @boat_path, :html => { :multipart => true } do |f| %>
   <%= f.label :name %>
   <%= f.text_field :name %><br><br>
   <%= f.label :containers %>
@@ -11,7 +11,9 @@
   <option value="NY">NY</option>
   <option value="NJ">NJ</option>
   <option value="CT">CT</option>
-</select>
+</select><br><br>
+  <%= f.label :"Upload the Boat Pic"%>
+  <%= f.file_field :avatar %>
   <br><br>
   <%= f.submit 'Create'%>
 <% end %>
