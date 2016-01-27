@@ -9,7 +9,7 @@ Origin of the job: <%= job.origin %><br>
 Destination of the job: <%= job.destination %><br>
 Containers needed for the job: <%= job.contneeded %><br>
 Cargo for the job: <%= job.cargo %><br>
-The cost of the job: <%= job.jobcost %>
+The cost of the job: $<%= job.jobcost %>
 <br>
 </div>
 <h3><%= link_to "Change Job", edit_boat_job_path(@boat.id, job.id) %>

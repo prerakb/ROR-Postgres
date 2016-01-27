@@ -1,20 +1,10 @@
 <h1>Create Jobs for the <%= @boat.name %></h1>
 
 <%= form_for([@boat, @job])  do |f| %>
-  <%= f.label :"Type Origin Choice" %>
-  <%= f.text_field :origin %><select>
-  <option value="US">US</option>
-  <option value="Canada">Canada</option>
-  <option value="Mexico">Mexico</option>
-  <option value="Cuba">Cuba</option>
-</select><br><br>
-  <%= f.label :"Type Destination Choice" %>
-  <%= f.text_field :destination %><select>
-  <option value="Italy">Italy</option>
-  <option value="China">China</option>
-  <option value="India">India</option>
-  <option value="Japan">Japan</option>
-</select><br><br>
+  <%= f.label :"Origin Choice" %>
+  <%= f.select(:origin, [['US'], ['Canada'], ['Mexico'], ['Cuba']], :class => "drop-down") %><br><br>
+  <%= f.label :"Destination Choice" %>
+  <%= f.select(:destination, [['Italy'], ['China'], ['India'], ['Japan']], :class => "drop-down") %><br><br>
   <%= f.label :"containers needed" %>
   <%= f.text_field :contneeded %><br><br>
   <%= f.label :"Cargo description-50 Character min" %>

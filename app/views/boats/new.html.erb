@@ -5,13 +5,9 @@
   <%= f.text_field :name %><br><br>
   <%= f.label :containers %>
   <%= f.text_field :containers %><br><br>
-  <%= f.label :"Type Location Choice" %>
-  <%= f.text_field :location %><select>
-  <option value="Boston">Boston</option>
-  <option value="NY">NY</option>
-  <option value="NJ">NJ</option>
-  <option value="CT">CT</option>
-</select><br><br>
+  <%= f.label :"Location Choice" %>
+  <%= f.select(:location, [['NY'], ['CT'], ['NJ'], ['Boston']], :class => "drop-down") %>
+<br><br>
   <%= f.label :"Upload the Boat Pic"%>
   <%= f.file_field :avatar %>
   <br><br>
