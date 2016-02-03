@@ -13,6 +13,7 @@ class BoatsController < ApplicationController
         if @boat.save
          redirect_to user_path(current_user)
         else
+          flash[:notice] = "Please make your new ship unique."
          render "new"
         end
     else

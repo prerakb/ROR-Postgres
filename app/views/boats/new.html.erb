@@ -1,5 +1,5 @@
 <h1>Create a New Boat</h1>
-
+<h3><%= flash[:notice] if flash[:notice] %></h3>
 <%= form_for @boat, :url => @boat_path, :html => { :multipart => true } do |f| %>
   <%= f.label :name %>
   <%= f.text_field :name %><br><br>

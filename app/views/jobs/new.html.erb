@@ -1,5 +1,5 @@
 <h1>Create Jobs for the <%= @boat.name %></h1>
-
+<h2><%= flash[:notice] if flash[:notice]%></h2>
 <%= form_for([@boat, @job])  do |f| %>
   <%= f.label :"Origin Choice" %>
   <%= f.select(:origin, [['US'], ['Canada'], ['Mexico'], ['Cuba']], :class => "drop-down") %><br><br>

@@ -17,12 +17,19 @@ body{
 	background-size: 100%;
 }
 
+a:link{
+	text-decoration: none;
+}
+
+a:hover{
+	text-decoration: underline;
+}
+
 li{
 	display: inline;
 }
 
 ul{
-	/*list-style-type: none;*/
 	font-size: x-large;
 	margin: 0px;
 	padding: 0px;

@@ -10,17 +10,14 @@ class JobsController < ApplicationController
   end
 
   def create
-    # if current_user
       @boat = Boat.find(params[:boat_id])
       	@job = @boat.jobs.build(job_params)
         if @job.save
           redirect_to boat_path(@boat)
         else
+          flash[:notice] = "Please use 50 Characters to describe your Cargo. Your Job Cost should be greater than $1,000."
           render "new"
         end
-    #else
-      # redirect_to login_path
-    #end
   end
 
   def edit
