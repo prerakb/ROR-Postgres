@@ -1,22 +1,7 @@
-Create a Rails application for shippers to help them organize all of the ships in their ﬂeet, with a user login. The application should be able to, at its most basic, allow users to:
+I created a rails application for shippers to help them organize all of thier ships in their fleet. The shipper will be able to add boats to their fleet, give them a unique name, tally the amount of containers and name it's current location.
 
-- sign up and login - add new boats to their proﬁle, meant to be managed by that user, including a boat name, amount of containers able to ship, and current boat location - assign "jobs" to boats, including containers needed, cargo, origin, cost for job, and destination
+The shipper will create jobs for the boats which will consist of containers needed, cargo, point of orgin & destination and the cost of the job.
 
+I used validations, uniqueness and hard coded lists for data entry. There are 4 data tables that are related to each other. I also used the paperclip gem so that the shipper can upload photos of their ship when it's being created.
 
-Once you have the basics setup, add some validations:
-
-- boats:   - must have a unique name   - locations must be pulled from a valid list of locations (use a hard-coded list)
-
-- jobs:   - must have a unique name   - cost must be above $1000 for each job   - cargo description must be at least 50 characters   - origin and destinations must be pulled from a valid list of locations (use a hard-coded list)
-
-Part 2
-Adding Rails UJS and Paperclip
-
-Let's add some additional functionality to our "Shipped" app from last week.
-
--Allow users to "follow" other ships. This means they should be able to click a "follow" button and have the "following" recorded in the database.
-
--A new page should be added where users can see what ships they're currently following
-
--Using Paperclip, users should have the ability to upload a photo of a ship when the ship is being created
-
+Moving forward with this project, I will create a feature where the shipper can follow other ships that they like and save them to their profile. I will create a page where the shippers can see what ships they are currently following and see who is following their ships.
