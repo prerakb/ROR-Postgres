@@ -1,15 +1,18 @@
+<body id="profilebg">
 <h1>Welcome <%= @user.name %>!</h1>
-<div><h2><%= link_to "Create Boats", new_boat_path %> <%= @user.name %></h2>
+<div><h2>Please <%= link_to "Create Boats", new_boat_path %> <%= @user.name %></h2>
 </div>
 <h2><u>Boats Created</u></h2>
-<% @user.boats.each do |boat| %>
-	<div>
+<div id="newboatdiv">
+	<% @user.boats.each do |boat| %>
 		<%= image_tag boat.avatar.url(:medium) %>
-	<h3>Boat Name: <%= boat.name %> <%= link_to "Boat's Job Page", boat_path(boat.id)%></h3>
-	<h3>Containers: <%= boat.containers %></h3>
-	<h3>Boat Location: <%= boat.location %></h3>
-	<h3><%= link_to "Assign jobs", new_boat_job_path(boat.id) %> | <%= link_to "Edit Boat Info", edit_boat_path(boat) %> | <%= link_to "Delete Boat", boat_path(boat), method: :delete, data: { confirm: "Are you sure?" }%> | <%= link_to "Followed Boats", followboat_path %>
-	</h3>
-	<br><br>
-	</div>
-<% end %>
+		<h3>Boat Name: <%= boat.name %> <%= link_to "Boat's Job Page", boat_path(boat.id)%></h3>
+		<h3>Containers: <%= boat.containers %></h3>
+		<h3>Boat Location: <%= boat.location %></h3>
+		<h3><%= link_to "Assign jobs", new_boat_job_path(boat.id) %> | <%= link_to "Edit Boat Info", edit_boat_path(boat) %> | <%= link_to "Delete Boat", boat_path(boat), method: :delete, data: { confirm: "Are you sure?" }%> | <%= link_to "Followed Boats", followboat_path %>
+		</h3>
+	<% end %>
+</div>
+<br><br>
+<div id="footer"></div>
+</body>
