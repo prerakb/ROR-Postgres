@@ -5,3 +5,6 @@ The shipper will create jobs for the boats which will consist of containers need
 I used validations, uniqueness and hard coded lists for data entry. There are 4 data tables that are related to each other. I also used the paperclip gem so that the shipper can upload photos of their ship when it's being created.
 
 Moving forward with this project, I will create a feature where the shipper can follow other ships that they like and save them to their profile. I will create a page where the shippers can see what ships they are currently following and see who is following their ships.
+
+Deployed to Heroku
+https://thawing-falls-77556.herokuapp.com
