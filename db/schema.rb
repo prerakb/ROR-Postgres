@@ -13,6 +13,9 @@
 
 ActiveRecord::Schema.define(version: 20160125023337) do
 
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
   create_table "boats", force: :cascade do |t|
     t.string   "name"
     t.string   "containers"
@@ -26,7 +29,7 @@ ActiveRecord::Schema.define(version: 20160125023337) do
     t.datetime "avatar_updated_at"
   end
 
-  add_index "boats", ["user_id"], name: "index_boats_on_user_id"
+  add_index "boats", ["user_id"], name: "index_boats_on_user_id", using: :btree
 
   create_table "followboats", force: :cascade do |t|
     t.integer  "user_id"
@@ -35,8 +38,8 @@ ActiveRecord::Schema.define(version: 20160125023337) do
     t.datetime "updated_at", null: false
   end
 
-  add_index "followboats", ["boat_id"], name: "index_followboats_on_boat_id"
-  add_index "followboats", ["user_id"], name: "index_followboats_on_user_id"
+  add_index "followboats", ["boat_id"], name: "index_followboats_on_boat_id", using: :btree
+  add_index "followboats", ["user_id"], name: "index_followboats_on_user_id", using: :btree
 
   create_table "jobs", force: :cascade do |t|
     t.string   "origin"
@@ -50,8 +53,8 @@ ActiveRecord::Schema.define(version: 20160125023337) do
     t.datetime "updated_at",  null: false
   end
 
-  add_index "jobs", ["boat_id"], name: "index_jobs_on_boat_id"
-  add_index "jobs", ["user_id"], name: "index_jobs_on_user_id"
+  add_index "jobs", ["boat_id"], name: "index_jobs_on_boat_id", using: :btree
+  add_index "jobs", ["user_id"], name: "index_jobs_on_user_id", using: :btree
 
   create_table "users", force: :cascade do |t|
     t.string   "name"
@@ -61,4 +64,9 @@ ActiveRecord::Schema.define(version: 20160125023337) do
     t.datetime "updated_at",      null: false
   end
 
+  add_foreign_key "boats", "users"
+  add_foreign_key "followboats", "boats"
+  add_foreign_key "followboats", "users"
+  add_foreign_key "jobs", "boats"
+  add_foreign_key "jobs", "users"
 end
