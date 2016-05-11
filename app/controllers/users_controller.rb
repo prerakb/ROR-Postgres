@@ -12,8 +12,10 @@ class UsersController < ApplicationController
 		  if @user.save
 		  session[:user_id] = @user.id
 		  redirect_to login_path
+		  flash[:notice] = "Sign up Successful!"
 		  else
 		  redirect_to :back
+		  flash[:notice] = "Sign up failed!"
 		  end
 	  end
 
