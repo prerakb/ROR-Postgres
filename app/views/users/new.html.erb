@@ -1,5 +1,14 @@
 <h2 class="fnotice"><%= flash[:notice] if flash[:notice] %></h2>
 <h1>Sign Up Now! Shipper</h1>
 <div id="supform">
-
+<%= form_for @user do |f| %>
+  <%= f.label :name %>
+  <%= f.text_field :name %><br><br>
+  <%= f.label :username %>
+  <%= f.text_field :username %><br><br>
+  <%= f.label :password %>
+  <%= f.password_field :password %>
+  <br><br>
+  <%= f.submit 'Sign Up'%>
+<% end %>
 </div>
